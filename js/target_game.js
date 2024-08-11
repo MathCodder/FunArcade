@@ -14,6 +14,7 @@ const init = function () {
 
 const startGame = function () {
   time.textContent = "20";
+  score.textContent = "0";
   nbTarget = 0;
   if (nbTarget < 10) {
     timerTarget = setInterval(createTarget, 1000);
