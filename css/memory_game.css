@@ -93,11 +93,10 @@ a {
 
 .block img {
   width: 100%;
-  z-index: 2;
+  display: block;
 }
 
 .value {
   font-size: 2em;
-  position: absolute;
-  z-index: 1;
+  display: none;
 }

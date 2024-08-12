@@ -1,25 +1,33 @@
 const valueData = ["A", "B", "C", "D"];
 const imageMinion = document.querySelectorAll(".image-block");
 const valueCase = document.querySelectorAll(".value");
+const tryNmb = document.getElementById("nmb-tent");
+const btn = document.getElementById("start-btn");
 let arrayValue = ["a", "b"];
+let numberTry = 0;
+let deckBack = 0;
+let timerForLook;
 
 function init() {
-  console.log(arrayValue);
+  for (const image of imageMinion) {
+    image.addEventListener("click", imageClick);
+  }
+
+  btn.addEventListener("click", createGame);
+}
+
+const randomValueData = function () {
+  let index = Math.floor(Math.random() * 4);
+  return valueData[index];
+};
+
+const createGame = function () {
   while (!checkPairInArray(arrayValue)) {
     arrayValue.length = 0;
     for (const value of valueCase) {
       addValue(value);
     }
   }
-
-  for (const image of imageMinion) {
-    image.addEventListener("click", imageClick);
-  }
-}
-
-const randomValueData = function () {
-  let index = Math.floor(Math.random() * 4);
-  return valueData[index];
 };
 
 function addValue(valueCase) {
@@ -29,6 +37,12 @@ function addValue(valueCase) {
 }
 
 function imageClick() {
+  deckBack += 1;
+  if (deckBack == 2) {
+    numberTry += 1;
+    tryNmb.textContent = `Number Try : ${numberTry}`;
+    deckBack = 0;
+  }
   this.style.display = "none";
 }
 
