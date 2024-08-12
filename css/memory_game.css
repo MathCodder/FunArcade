@@ -12,8 +12,8 @@
   font-family: "Poppins";
 }
 
-body{
-    overflow: hidden;
+body {
+  overflow: hidden;
 }
 
 nav {
@@ -55,21 +55,49 @@ a {
   padding: 50px;
 }
 
+.info-game {
+  background-color: rgb(120, 174, 255);
+  padding: 10px;
+}
+
+#start-btn {
+  padding: 10px 15px 10px 15px;
+  background-color: rgb(79, 255, 117);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#start-btn:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  cursor: pointer;
+}
+
+#nmb-tent {
+  margin-left: 20%;
+}
+
 .grid-blocks {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(100px, auto);
 }
 
-.block{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    width: 150px;
-    height: 150px;
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
 }
 
-.block img{
-    width: 100%;
+.block img {
+  width: 100%;
+  z-index: 2;
+}
+
+.value {
+  font-size: 2em;
+  position: absolute;
+  z-index: 1;
 }
